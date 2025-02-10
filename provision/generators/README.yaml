@@ -1,0 +1,57 @@
+---
+#
+# This is the canonical configuration for the `README.md`
+# Run `make readme` to rebuild the `README.md`
+#
+
+# Name of this project
+name: prueba2
+
+# Tags of this project
+tags:
+  - node
+  - react
+  - express
+
+email:
+  support: fperez@infosis.tech
+
+# Logo for this project
+#logo: docs/logo.png
+
+# License of this project
+license: "LGPL-3.0"
+
+# Canonical GitLab repo
+gitlab_host: gitlab.infosisglobal.com
+gitlab_repo: zeus-admin-mensagger/prueba2
+
+# Badges to display
+badges:
+  - name: pipeline status
+    image: https://gitlab.infosisglobal.com/zeus-admin-mensagger/prueba2/badges/main/pipeline.svg
+    url: https://gitlab.infosisglobal.com/zeus-admin-mensagger/prueba2/-/commits/main
+  - name: pre-commit
+    image: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
+    url: https://github.com/pre-commit/pre-commit
+  - name: Conventional Commits
+    image: https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow
+    url: https://conventionalcommits.org
+  - name: KeepAChangelog
+    image: https://img.shields.io/badge/changelog-Keep%20a%20Changelog%20v1.0.0-orange
+    url: https://keepachangelog.com
+
+# Short description of this project
+description: |-
+  react express template
+
+requirements: |-
+
+  This is a list of plugins that need to be installed previously to enjoy all the goodies of this configuration:
+
+  - [gomplate](https://github.com/hairyhenderson/gomplate)
+  - [python](https://www.python.org)
+  - [taskfile](https://github.com/go-task/task)
+
+usages:
+  - docs/usage.md

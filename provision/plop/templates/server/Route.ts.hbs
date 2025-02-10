@@ -1,0 +1,13 @@
+import { Router } from "express"
+import * as {{name}}Controller from "../../../controllers/{{name}}Controller"
+
+const {{name}}Router = Router()
+
+
+{{name}}Router.get("/", {{name}}Controller.basicGet)
+
+{{name}}Router.post("/", {{name}}Controller.{{name}}Fetch)
+
+
+
+export default {{name}}Router

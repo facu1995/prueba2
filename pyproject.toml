@@ -1,0 +1,49 @@
+[tool.poetry]
+name = "prueba2"
+version = "0.0.0"
+description = "react express template"
+authors = ["fperez@infosis.tech"]
+license = "LGPL-3.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8,<3.12"
+
+[tool.poetry.group.dev.dependencies]
+bridgecrew = "*"
+bumpversion = "*"
+doc8 = "*"
+grip = "*"
+isort = "*"
+mkdocs = "*"
+mkdocs-material = "*"
+mypy = "*"
+parso = "*"
+pre-commit = "*"
+pycodestyle = "*"
+pydocstyle = "*"
+pygments = "*"
+pylint = "*"
+pymdown-extensions = "*"
+black = "*"
+
+[tool.poetry.group.docs.dependencies]
+mkdocs = "*"
+mkdocs-material-extensions = "1.1.1"
+mkdocs-material = "*"
+
+[tool.poetry_bumpversion.file."sonar-project.properties"]
+search = 'sonar.projectVersion={current_version}'
+replace = 'sonar.projectVersion={new_version}'
+
+[tool.poetry_bumpversion.file."package.json"]
+search = '"version": "{current_version}"'
+replace = '"version": "{new_version}"'
+
+[tool.poetry_bumpversion.file."src/server/config/constants.ts"]
+search = 'process.env.VERSION || "{current_version}"'
+replace = 'process.env.VERSION || "{new_version}"'
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,6 @@
+.logo{
+    color: var(--deep-txt);
+    text-shadow:-4px 2px 9px rgba(23, 81, 167, 0.699);
+    margin:auto;
+    width: fit-content;
+}

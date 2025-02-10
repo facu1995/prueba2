@@ -1,0 +1,13 @@
+{
+    "name": "eslint-plugin-custom",
+    "version": "0.0.0",
+    "keywords": [
+      "eslint",
+      "eslint-plugin",
+      "eslintplugin",
+      "react"
+    ],
+    "main": "index.js",
+    "author": "Simón Osudar",
+    "license": "MIT"
+  }

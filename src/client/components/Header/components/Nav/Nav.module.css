@@ -1,0 +1,76 @@
+.Nav{
+    display: grid;
+    --nav-width: 196px;
+    width: var(--nav-width);
+    padding: 0 1rem;
+    background-color: var(--bg-color-2);
+  
+}
+.Nav.button{
+    margin-top: 2rem;
+}
+.Nav.horizontal{
+    width: 100%;
+}
+.horizontal  {
+    flex-direction: row !important;
+}
+.shadow{
+    box-shadow: 1px 1px 10px rgb(195, 185, 185);
+}
+.Nav ul{
+    grid-column: 1/2;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 2rem;
+    margin: 2rem auto;
+    height: fit-content;
+}
+.Nav ul li:first-child img:first-of-type{
+    transform: scale(1.8);
+}
+Nav ul li{
+    width: fit-content;
+}
+.Nav ul li img{
+    cursor: pointer;
+    width: 30px;
+    aspect-ratio: 1 / 1;
+}
+.Nav ul li a{
+    height: fit-content;
+    display: block;
+    padding: 1rem;
+    border-radius: 15px;
+}
+
+.active{
+    background-color: var(--main);
+    box-shadow: -3px 3px 5px #dad8d8;
+    display: grid;
+    place-items: center;
+}
+.active img{
+    filter: invert(100%) sepia(0%) saturate(1%) hue-rotate(56deg) brightness(201%) contrast(102%);
+}
+.Nav button{
+    background-color: var(--main);
+    width: 3rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    margin: .5rem 1rem;
+    transition: all .3s ease-in-out;
+    position: absolute;
+    top: -2rem;
+    padding: .5rem;
+}
+.Nav button img{
+    filter: invert(100%) sepia(7%) saturate(0%) hue-rotate(116deg) brightness(107%) contrast(108%);
+    transition: all .3s ease-in-out;
+}
+
+.hidden button img{
+    transform: rotate(-90deg);
+}

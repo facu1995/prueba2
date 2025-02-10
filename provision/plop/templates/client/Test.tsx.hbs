@@ -1,0 +1,12 @@
+import '@testing-library/jest-dom';
+import {{pascalCase name}} from './{{pascalCase name}}';
+import { RenderResult, render } from '@testing-library/react';
+
+describe('< {{pascalCase name}} />', () => {
+     let component : RenderResult;
+
+    test('should render', () => {
+        component = render(<{{pascalCase name}}/>)
+        expect(component.container).toBeInTheDocument()
+    })
+})

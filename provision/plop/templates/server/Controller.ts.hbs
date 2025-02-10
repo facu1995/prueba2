@@ -1,0 +1,20 @@
+import { {{name}}Service } from "../services/{{name}}Service"
+import { Request, Response, NextFunction } from "express"
+import logger from "../loaders/logger"
+
+const basicGet = (_req: Request, res: Response) => {
+    res.json("{{name}}-route")
+}
+
+const {{name}}Fetch = async (req: Request, res: Response, next: NextFunction) => {
+  const response = await {{name}}Service(req, next)
+  if (response && !res.headersSent) {
+    res.status(res.statusCode).json({ data: response })
+    ////./src/client/config/API.ts --> clientId header
+    logger.info(`{{name}}Controller - {{name}}Service with method ${req.method}, ` + res.statusCode + `from client ${req.headers.clientId || 'unknown'}`)
+  } else {
+    return
+  }
+}
+
+export { basicGet, {{name}}Fetch }

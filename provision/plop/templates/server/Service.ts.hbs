@@ -1,0 +1,27 @@
+import axios, { AxiosResponse } from "axios"
+import { NextFunction, Request } from "express";
+//import endpoint from "../config/constants"
+
+
+export const {{name}}Service = async (req: Request, next: NextFunction) => {
+  
+  const {authorization} = req.headers || ''
+
+  try {
+    const config = {
+      method: "post",
+      url: "endpoint",
+      headers: {
+        accept: "*/*",
+        "Content-Type": "application/json",
+        Authorization: authorization
+      },
+      data: req.body
+    }
+    const response = await axios.request(config)
+    return response
+  } catch (e) {
+    req.headers.src = '{{name}}Service' ///add a header with the service name to track the error
+    return next(e as unknown as AxiosResponse)
+  }
+}

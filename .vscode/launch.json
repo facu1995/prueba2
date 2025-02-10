@@ -1,0 +1,29 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug TypeScript Express",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/node_modules/ts-node/dist/bin.js",
+            "args": [
+                "${workspaceFolder}/src/server/index.ts"
+            ],
+            "runtimeArgs": [
+                "-r",
+                "ts-node/register"
+            ],
+            "sourceMaps": true,
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "outFiles": [
+                "${workspaceFolder}/dist/server/*.js"
+            ],
+            "preLaunchTask": "tsc: build - tsconfig.json",
+            "restart": true,
+            "protocol": "inspector",
+            "localRoot": "${workspaceFolder}",
+            "remoteRoot": "${workspaceFolder}"
+        }
+    ]
+}

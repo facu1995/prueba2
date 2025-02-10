@@ -1,0 +1,4 @@
+include:
+  - project: 'devops/deployments'
+    ref: master
+    file: '/templates/zeus-admin-mensagger/prueba2.yml'

@@ -1,0 +1,20 @@
+import { createSlice } from '@reduxjs/toolkit'
+import type { PayloadAction } from '@reduxjs/toolkit'
+
+interface {{pascalCase name}} {
+    
+}
+
+const initialState = {} as {{pascalCase name}};
+
+export const {{name}}Slice = createSlice({
+  name: '{{name}}',
+  initialState,
+  reducers: {
+    reset: () => initialState,
+  },
+})
+
+export const {  } = {{name}}Slice.actions
+
+export default {{name}}Slice.reducer

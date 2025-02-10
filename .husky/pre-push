@@ -1,0 +1,37 @@
+# Obtener el nombre de la rama actual
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
+
+# Obtener el último mensaje de commit
+LAST_COMMIT_MSG=$(git log -1 --pretty=%B)
+
+# Saltarse el paso del linter en ramas productivas
+if echo "$BRANCH" | grep -q "prod"; then
+  echo "La rama actual incluye 'prod', saltando lint..."
+  exit 0
+fi
+
+# Saltarse el paso del linter luego de haber versionado
+if echo "$BRANCH" | grep -q "version"; then
+  echo "La rama actual incluye 'version', saltando lint..."
+  exit 0
+fi
+
+# Si el commit pasado contiene la palabra lint, saltar ejecución
+if echo "$LAST_COMMIT_MSG" | grep -q "lint"; then
+  echo "Último commit contiene la palabra 'lint', saltando lint..."
+  exit 0
+fi
+
+# Ejecuta lint con fix
+npm run lint:fix
+
+# Añade los archivos modificados por el linter al commit
+git add -u
+
+# Verifica si hay algo para commitear
+if ! git diff --cached --exit-code; then
+  git commit -m "style: $BRANCH auto lint"
+  git push
+fi
+
+exit 0

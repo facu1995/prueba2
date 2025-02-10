@@ -1,0 +1,28 @@
+.header{
+    display: flex;
+    background-color: var(--bg-color-2);
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    padding: 1rem 2rem;
+
+    background-color: var(--white);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.header img{
+    max-width: 125px;
+}
+.header h1{
+    font-size: 1rem;
+    margin-right: auto;
+    margin-left: 5rem;
+    font-weight: 400;
+    color: var(--text-dark);
+}
+
+
+
+

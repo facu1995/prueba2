@@ -9,6 +9,15 @@ apiRouter.get("/", (_req: Request, res: Response) => {
   res.send("Hello world!")
 })
 
+apiRouter.post("/", (_req: Request, res: Response) => {
+  
+  res.send(
+    {
+      id: 1,
+      person: 2
+    })
+})
+
 //ADD ROUTES
 apiRouter.use('/auth', authRouter)
 

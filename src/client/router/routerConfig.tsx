@@ -1,13 +1,12 @@
 import { ReactNode } from "react"
-import FirstRouteContent from "./examples/FirstRouteContent"
-import SecondRouteContent from "./examples/SecondRouteContent"
-import ThirdRouteContent from "./examples/ThirdRouteContent"
+import { FirstRouteContent, SecondRouteContent, ThirdRouteContent } from "../pages"
 import { icon1, icon2, icon3 } from "./assets"
 
 export interface RouteData {
   path: string
   element: ReactNode
   icon: any
+  children?:RouteData[]
 }
 
 export const ROUTES: Array<RouteData> = [

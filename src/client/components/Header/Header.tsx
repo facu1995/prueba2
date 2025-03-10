@@ -2,7 +2,8 @@ import logo from "../../assets/logo-infosis.png"
 import style from "./header.module.css"
 import User from "./components/User/User"
 import { Nav } from ".."
-import { ROUTES } from "../../utils/routes"
+import { ROUTES } from "../../router/routerConfig"
+
 
 interface HeaderProps {
   nav?: boolean

@@ -1,9 +1,9 @@
-FROM node:16.19-alpine
+FROM node:18.12-alpine
 
 ARG VERSION=0.0.0
 
 LABEL maintainer="Team Architecture <architecture@infosis.tech>" \
-      org.label-schema.vcs-url="https://gitlab.infosisglobal.com/zeus-admin-mensagger/prueba2" \
+      org.label-schema.vcs-url="https://gitlab.infosisglobal.com/zeus-admin/zeus-admin-messages-webapp" \
       org.label-schema.version=$VERSION \
       org.label-schema.schema-version="1.0"
 
@@ -29,6 +29,7 @@ RUN apk add --update --no-cache ${BASE_DEPS} \
     # Cleanup
     && rm -rf /var/cache/apk/*
 
-EXPOSE 5173
+EXPOSE 8080
 
 CMD ["yarn", "start"]
+

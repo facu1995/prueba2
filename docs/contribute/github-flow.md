@@ -8,7 +8,7 @@
 <!-- Include: ./../disclaimer.md -->
 <!-- Include: ac:toc -->
 
-To contribute to prueba2 project on [GitLab](https://gitlab.infosisglobal.com/zeus-admin-mensagger/prueba2), We use [GitHub Flow](https://githubflow.github.io/), it means that you should branch from the main repository and contribute back by making [merge_requests](https://gitlab.infosisglobal.com/zeus-admin-mensagger/prueba2/-/merge_requests).
+To contribute to prueba2 project on [GitLab](https://gitlab.infosisglobal.com/frontend/prueba2), We use [GitHub Flow](https://githubflow.github.io/), it means that you should branch from the main repository and contribute back by making [merge_requests](https://gitlab.infosisglobal.com/frontend/prueba2/-/merge_requests).
 
 GitHub Flow is very lightweight (especially compared to GitFlow). This workflow uses only two kinds of branches:
 
@@ -31,10 +31,10 @@ To follow the instructions in this guide and start contributing to prueba2 proje
 To synchronize with the main repository, add it to the remotes:
 
 ```bash
-git remote add upstream  https://gitlab.infosisglobal.com/zeus-admin-mensagger/prueba2.git
+git remote add upstream  https://gitlab.infosisglobal.com/frontend/prueba2.git
 ```
 
-Now your **upstream** points to **zeus-admin-mensagger/prueba2**.
+Now your **upstream** points to **frontend/prueba2**.
 
 ## Branches
 
@@ -58,7 +58,7 @@ To resolve a conflict, run the following commands.
 
 ```bash
 # checkout a branch you open MR from
-git fetch upstream # assuming upstream is zeus-admin-mensagger/prueba2
+git fetch upstream # assuming upstream is frontend/prueba2
 git merge upstream/merge_branch # Where merge_branch is a branch you open merge request against.
 # resolve merge requests
 git add changed_files

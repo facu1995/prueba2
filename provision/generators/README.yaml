@@ -24,13 +24,13 @@ license: "LGPL-3.0"
 
 # Canonical GitLab repo
 gitlab_host: gitlab.infosisglobal.com
-gitlab_repo: zeus-admin-mensagger/prueba2
+gitlab_repo: frontend/prueba2
 
 # Badges to display
 badges:
   - name: pipeline status
-    image: https://gitlab.infosisglobal.com/zeus-admin-mensagger/prueba2/badges/main/pipeline.svg
-    url: https://gitlab.infosisglobal.com/zeus-admin-mensagger/prueba2/-/commits/main
+    image: https://gitlab.infosisglobal.com/frontend/prueba2/badges/main/pipeline.svg
+    url: https://gitlab.infosisglobal.com/frontend/prueba2/-/commits/main
   - name: pre-commit
     image: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
     url: https://github.com/pre-commit/pre-commit

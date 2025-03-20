@@ -2,7 +2,7 @@ style: github
 template: CHANGELOG.tpl.md
 info:
   title: CHANGELOG
-  repository_url: https://gitlab.infosisglobal.com/zeus-admin-mensagger/prueba2
+  repository_url: https://gitlab.infosisglobal.com/frontend/prueba2
 options:
   commits:
     filters:

@@ -15,8 +15,8 @@ extra:
   font:
     text: "Source Sans Pro"
 
-repo_name: 'zeus-admin-mensagger/prueba2'
-repo_url: 'https://gitlab.infosisglobal.com/zeus-admin-mensagger/prueba2'
+repo_name: 'frontend/prueba2'
+repo_url: 'https://gitlab.infosisglobal.com/frontend/prueba2'
 copyright: 'Copyright © 2021 <a href="https://infosisglobal.com">infosisglobal</a>'
 
 google_analytics:

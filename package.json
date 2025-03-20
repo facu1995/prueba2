@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "prepare": "test -d .git || git init && husky init",
+    "prepare": "husky",
     "dev": "concurrently \"nodemon --esm src/server/index.ts\" \"vite --open\"",
     "server": "nodemon --esm src/server/index.ts",
     "build": "vite build && webpack",

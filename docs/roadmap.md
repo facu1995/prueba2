@@ -29,7 +29,7 @@
 
 The Roadmap is a list of all the things we're working on for the year.
 
-You can see the corresponding projects on [prueba2](https://gitlab.infosisglobal.com/zeus-admin-mensagger/prueba2)
+You can see the corresponding projects on [prueba2](https://gitlab.infosisglobal.com/frontend/prueba2)
 
 ## Legend
 

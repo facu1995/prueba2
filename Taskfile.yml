@@ -34,8 +34,8 @@ dotenv:
 
 vars:
   PROJECT_NAME: prueba2
-  GROUP_NAME: zeus-admin-mensagger
-  ORGANIZATION: zeus-admin-mensagger
+  GROUP_NAME: frontend
+  ORGANIZATION: frontend
   DOCKER_PLATFORM: linux/amd64
   REVIEWERS: lmayta
   PYTHON_VERSION: 3.11.2

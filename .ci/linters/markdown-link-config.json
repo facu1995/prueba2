@@ -1,5 +1,5 @@
 {
-  "baseUrl": "https://gitlab.infosisglobal.com/zeus-admin-mensagger/prueba2",
+  "baseUrl": "https://gitlab.infosisglobal.com/frontend/prueba2",
   "ignorePatterns": [
     {
       "pattern": "^https://infosisglobal.com"

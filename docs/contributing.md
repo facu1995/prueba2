@@ -12,7 +12,7 @@ Contributions to prueba2 are welcome.
 
 Feel free to use all of the contribution options:
 
-- Contribute to prueba2 repositories on [GitLab](https://gitlab.infosisglobal.com/zeus-admin-mensagger/prueba2). See [Github Flow](./contribute/github-flow.md).
+- Contribute to prueba2 repositories on [GitLab](https://gitlab.infosisglobal.com/frontend/prueba2). See [Github Flow](./contribute/github-flow.md).
 
 ## Getting Started
 
@@ -73,7 +73,7 @@ See [Git flow](./contribute/github-flow.md).
 
 ### Documentation
 
-Documentation is a part of the prueba2 code base. You can find the documentation files in the `doc/` subdirectory of the [main repository](https://gitlab.infosisglobal.com/zeus-admin-mensagger/prueba2). This means that the contribution process is the same for both the source code and documentation.
+Documentation is a part of the prueba2 code base. You can find the documentation files in the `doc/` subdirectory of the [main repository](https://gitlab.infosisglobal.com/frontend/prueba2). This means that the contribution process is the same for both the source code and documentation.
 
 ### Testing
 
@@ -81,15 +81,15 @@ See [Testing](./testing.md).
 
 ### Code Submission
 
-1. See if a [Merge Request](https://gitlab.infosisglobal.com/zeus-admin-mensagger/prueba2/-/merge_requests) exists
+1. See if a [Merge Request](https://gitlab.infosisglobal.com/frontend/prueba2/-/merge_requests) exists
    - Add some comments or review the code to help it along
    - Don\'t be afraid to comment when logic needs clarification
-2. Create a Fork and open a [Merge Request](https://gitlab.infosisglobal.com/zeus-admin-mensagger/prueba2/-/merge_requests/) if needed
+2. Create a Fork and open a [Merge Request](https://gitlab.infosisglobal.com/frontend/prueba2/-/merge_requests/) if needed
 
 ### Code Review
 
 - Anyone can review code
-- Any [Merge Request](https://gitlab.infosisglobal.com/zeus-admin-mensagger/prueba2/-/merge_requests/) should be closed or merged within a week
+- Any [Merge Request](https://gitlab.infosisglobal.com/frontend/prueba2/-/merge_requests/) should be closed or merged within a week
 
 ### Code Acceptance
 

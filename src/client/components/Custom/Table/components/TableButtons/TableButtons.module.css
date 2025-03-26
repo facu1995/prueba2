@@ -1,0 +1,49 @@
+.cell > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.button {
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  background: var(--black-11);
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  border: 0;
+  outline: 0;
+  transition: ease-out 0.2s;
+}
+
+.button > svg {
+  width: 18px;
+  height: 18px;
+}
+
+.button > svg > path {
+  transition: ease-out 0.2s;
+  fill: var(--purple-light-3);
+}
+
+.button:active svg {
+  scale: 0.95;
+}
+
+.button:is(:hover, :active) {
+  background: var(--purple-light-10);
+}
+
+.button:is(:hover, :active) svg path {
+  fill: var(--purple-light);
+}
+
+.trash svg path {
+  fill: var(--purple-light-3);
+}
+
+.trash:is(:hover, :active) svg path {
+  fill: var(--purple-light);
+}

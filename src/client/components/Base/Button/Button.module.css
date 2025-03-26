@@ -1,0 +1,86 @@
+.button {
+  position: relative;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  border-radius: 60px;
+  color: var(--black-11);
+  background: var(--turquoise);
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: ease-out 0.2s;
+}
+
+.button:hover {
+  background: var(--turquoise);
+}
+
+.button:active {
+  background: var(--turquoise-3);
+  scale: 0.95;
+}
+
+.unfilled {
+  color: var(--black-3);
+  background: 0;
+}
+
+.unfilled:hover {
+  background: 0;
+  color: var(--turquoise);
+}
+
+.unfilled:active {
+  color: var(--turquoise);
+}
+
+.unfilled:is(:hover, :active) > div > svg > path {
+  fill: var(--turquoise);
+}
+
+.large {
+  font: normal 700 18px/132% "Open Sans";
+  padding: 16px 30px 16px 26px;
+}
+
+.medium {
+  font: normal 700 16px/148% "Open Sans";
+  padding: 12px 22px 12px 18px;
+}
+
+.small {
+  font: normal 700 14px/140% "Open Sans";
+  padding: 8px 20px 8px 16px;
+}
+
+.button:disabled {
+  color: white;
+  background: var(--turquoise-6);
+}
+
+.button:disabled:active {
+  scale: 1;
+}
+
+.unfilled:disabled {
+  color: var(--turquoise-6);
+  background: 0;
+}
+
+.svg-icon-div {
+  width: 16px;
+  height: 16px;
+  display: grid;
+  place-items: center;
+}
+
+.svg-icon-div > svg > path {
+  transition: ease-out 0.3s;
+  fill: var(--black-11);
+}
+
+.unfilled > div > svg > path {
+  fill: var(--black-3);
+}

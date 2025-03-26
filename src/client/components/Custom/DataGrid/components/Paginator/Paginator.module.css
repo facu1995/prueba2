@@ -1,0 +1,93 @@
+.foot {
+  width: 100%;
+  height: 68px;
+}
+
+.row {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  max-height: 68px;
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cell > span {
+  font: normal 400 14.483px/19px "Open Sans";
+  color: var(--gris3, #585d6f);
+}
+
+.cell > span > b {
+  font: normal 800 14px/19px "Open Sans";
+}
+
+.input {
+  outline: 0;
+  width: 2.6rem;
+  padding: 0.5rem 0.4rem;
+  border-radius: 3.75px;
+  outline: 0;
+  background: #fff;
+  color: var(--gris3, #585d6f);
+  text-align: center;
+  font: normal 800 14px/19px "Open Sans";
+  border: 0.875px solid var(--black-9);
+  caret-color: var(--violet-bold);
+  transition: ease 0.3s;
+}
+
+.input:is(:hover, :active, :focus) {
+  outline: 0;
+  border: 1px solid var(--violet-bold);
+}
+
+.input[type="number"]::-webkit-inner-spin-button,
+.input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.buttonsContainer {
+  background: #ffffff;
+  width: 5rem;
+  height: 2rem;
+  border-radius: 3.75px;
+  border: 0.875px solid var(--violet-bold);
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+
+.buttonsContainer > button {
+  width: 100%;
+  height: 100%;
+  background: 0;
+  border: 0;
+  outline: 0;
+  display: grid;
+  color: #a1a9c7;
+  place-items: center;
+  transition: ease 0.3s;
+  cursor: pointer;
+}
+
+.buttonsContainer > button svg path {
+  transition: ease 0.2s;
+}
+
+.buttonsContainer > button:is(:hover, :active) svg path {
+  stroke: var(--violet-bold);
+}
+
+.withoutFooter {
+  height: unset;
+}

@@ -1,0 +1,17 @@
+.head {
+  width: 100%;
+}
+
+.head > tr::before {
+  box-shadow: unset;
+  background: var(--black-11);
+  border-color: var(--black-9);
+}
+
+.head > tr > td {
+  text-transform: uppercase;
+}
+
+.head > tr > td > * {
+  color: var(--black-6);
+}

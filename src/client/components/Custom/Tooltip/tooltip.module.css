@@ -1,0 +1,63 @@
+.dynamicTooltip {
+  position: absolute;
+  box-sizing: border-box;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  padding: 5px;
+  border-radius: 5px;
+  font: normal 500 12px/13px Ubuntu;
+  background: var(--Color-200, #5f6388);
+  box-shadow: 0px 42.109px 27.857px 0px rgba(41, 72, 152, 0.03), 
+              0px 21.864px 14.212px 0px rgba(41, 72, 152, 0.03),
+              0px 8.908px 7.126px 0px rgba(41, 72, 152, 0.02), 
+              0px 2.024px 3.442px 0px rgba(41, 72, 152, 0.01);
+  text-align: center;
+  transition: visibility ease 0.3s;
+  z-index: 10000;
+  max-height: 150px;
+  max-width: 280px;
+ 
+  
+
+  /* ::before {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--Color-200, #5f6388) transparent transparent transparent;
+    -webkit-line-clamp: 7;
+    line-clamp: 7;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis; 
+    word-wrap: break-word; 
+    white-space: normal;
+  } */
+
+  > * {
+    box-sizing: border-box;
+  }
+}
+
+.dynamicTooltip::before {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--Color-200, #5f6388) transparent transparent transparent;
+  -webkit-line-clamp: 7;
+  line-clamp: 7;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis; 
+  word-wrap: break-word; 
+  white-space: normal;
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+  }

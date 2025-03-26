@@ -1,0 +1,36 @@
+.tag {
+  width: fit-content;
+  position: relative;
+  padding: 4px 12px;
+}
+
+.tag > .content {
+  position: relative;
+  font: normal 500 13px/130% "Open Sans";
+  color: var(--font-color, var(--Gris-100, #68688c));
+  z-index: 1;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  transition: ease-out 0.3s;
+  background: var(--tag-color, var(--primary-color));
+  border: 1px solid var(--border-color, var(--Gris-20, #ccd1e4));
+}
+
+.unfilled > .bg {
+  background: transparent;
+}
+
+.unfilled > .content {
+  color: var(--font-color, var(--tag-color, var(--primary-color)));
+}

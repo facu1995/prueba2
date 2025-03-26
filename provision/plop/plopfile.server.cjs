@@ -1,5 +1,5 @@
 module.exports = function (plop) {
-    plop.setGenerator("endpoint + controller + serivce", {
+    plop.setGenerator("endpoint + controller + service", {
       description: "Create an Express endpoint, with its controller and service.",
       prompts: [
         {

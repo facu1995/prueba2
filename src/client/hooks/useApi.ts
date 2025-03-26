@@ -1,13 +1,14 @@
+import { AxiosRequestConfig } from "axios";
 import { useState, useEffect, useRef, useCallback } from "react";
 interface UseApiResult<T, P> {
   data: T | null;
   loading: boolean;
   error: string | null;
-  call: (params?: P) => Promise<void>;
+  call: (params?: P,config?: AxiosRequestConfig) => Promise<void>;
 }
 
 function useApi<T, P = void>(
-  callFunction: (signal: AbortSignal, params?: P) => Promise<T>,
+  callFunction: (signal: AbortSignal, params?: P,config?: AxiosRequestConfig) => Promise<T>,
   options: {
     initialParams?: P;
     autoCall?: boolean;
@@ -21,21 +22,24 @@ function useApi<T, P = void>(
   const [error, setError] = useState<string | null>(null);
   const abortControllerRef = useRef<AbortController | null>(null);
 
-  const call = useCallback(async (params?: P) => {
+  const call = useCallback(async (params?: P, config?: AxiosRequestConfig) => {
     if (abortControllerRef.current) {
       abortControllerRef.current.abort();
     }
-
+  
     const controller = new AbortController();
     abortControllerRef.current = controller;
-
+  
     setLoading(true);
     setError(null);
     try {
-      const result = await callFunction(controller.signal, params);
+      console.log("Calling API with params:", params);
+      const result = await callFunction(controller.signal, params, config);
+      console.log("API response:", result);
       setData(result);
       if (onSuccess) onSuccess(result);
     } catch (err: any) {
+      console.error("Error in API call:", err);
       if (err.name === "AbortError") {
         console.log("Request aborted");
       } else {

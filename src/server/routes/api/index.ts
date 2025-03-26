@@ -1,24 +1,19 @@
 import { Router, Request, Response } from "express"
 import authRouter from "./auth"
-//import { authorizationDecrypter } from "../../middlewares/authorizationDecrypter"
+import { authorizationDecrypter } from "../../middlewares/authorizationDecrypter"
 //ROUTES IMPORTS
+import testEncryRouter from "./testEncry"
+import testRouter from "./test"
 
 const apiRouter = Router()
 
-apiRouter.get("/", (_req: Request, res: Response) => {
+apiRouter.get("/hello", (_req: Request, res: Response) => {
   res.send("Hello world!")
 })
 
-apiRouter.post("/", (_req: Request, res: Response) => {
-  
-  res.send(
-    {
-      id: 1,
-      person: 2
-    })
-})
-
 //ADD ROUTES
+apiRouter.use('/testEncry', authorizationDecrypter, testEncryRouter)
+apiRouter.use('/test', testRouter)
 apiRouter.use('/auth', authRouter)
 
 ///ROUTE WITH DECRYPTION

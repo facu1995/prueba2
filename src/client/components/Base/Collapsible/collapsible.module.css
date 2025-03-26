@@ -1,0 +1,18 @@
+.collapsibleContainer {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  /* background-color: red; */
+  transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  opacity: 0;
+}
+
+.collapsibleContent {
+  min-height: 0px;
+}
+
+.isOpen {
+  grid-template-rows: 1fr;
+  overflow: visible;
+  opacity: 1;
+}

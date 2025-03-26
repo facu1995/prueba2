@@ -1,0 +1,20 @@
+.container {
+  width: 100%;
+}
+
+.container > div {
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  padding-block: 16px;
+}
+
+.input {
+  box-shadow: 0px 0px 8px 0px rgba(128, 112, 221, 0.35);
+}
+
+.input:is(:focus, :focus-visible, :focus-within) {
+  box-shadow: 0px 0px 0px 4px #ccf1f2;
+}

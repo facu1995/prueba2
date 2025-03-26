@@ -1,0 +1,28 @@
+.image {
+  position: relative;
+}
+
+.image > img {
+  transition: ease-out 0.3s;
+}
+
+.loaded {
+  opacity: 1;
+  filter: blur(0px);
+}
+
+.image > .loader {
+  object-fit: cover;
+  object-position: center;
+}
+
+.loader {
+  position: absolute;
+  filter: blur(3.33px);
+}
+
+.hidden {
+  opacity: 0;
+  filter: blur(3.33px);
+  overflow: hidden;
+}

@@ -9,7 +9,7 @@ const basicGet = (_req: Request, res: Response) => {
 const {{name}}Fetch = async (req: Request, res: Response, next: NextFunction) => {
   const response = await {{name}}Service(req, next)
   if (response && !res.headersSent) {
-    res.status(res.statusCode).json({ data: response })
+    res.status(res.statusCode).json(response.data)
     ////./src/client/config/API.ts --> clientId header
     logger.info(`{{name}}Controller - {{name}}Service with method ${req.method}, ` + res.statusCode + `from client ${req.headers.clientId || 'unknown'}`)
   } else {

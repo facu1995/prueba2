@@ -1,0 +1,71 @@
+.row {
+  position: relative;
+  width: 100%;
+  height: 3.25rem;
+  padding: 0.94rem 2rem 0.94rem 2rem;
+}
+
+.row::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 8px;
+  z-index: -1;
+  transition: ease-out 0.3s;
+  border: 1.5px solid transparent;
+}
+
+.row.selected::before {
+  background: var(--turquoise-10);
+  border-color: var(--turquoise);
+  box-shadow: 0px 0px 8px 0px rgba(128, 112, 221, 0.2);
+}
+
+.row.row.selected > * {
+  color: var(--turquoise);
+}
+
+.container {
+  max-width: 30px;
+}
+
+.container > button {
+  width: 21px;
+  height: 21px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  background: 0;
+  padding: 0;
+  outline: 0;
+  border: 0;
+}
+
+.arrowContainer {
+  display: grid;
+  place-items: center;
+}
+
+.arrowContainer > button {
+  width: 21px;
+  height: 21px;
+  background: 0;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+}
+
+.arrowContainer > button svg path {
+  transition: ease 0.3s;
+}
+
+.arrowContainer > button:is(:hover, :active) svg path {
+  fill: var(--turquoise);
+}
+
+.withoutArrow {
+  padding-right: 4rem;
+}

@@ -1,15 +1,11 @@
-import { Header, Router } from "./components"
-import { constants } from "./config/constants"
+import { ToastProvider } from "./components"
+import { Navigation } from "./routes"
 
 function App() {
-
-  console.log(constants)
-  
   return (
-    <>
-      <Header nav/>
-      <Router />
-    </>
+    <ToastProvider>
+      <Navigation />
+    </ToastProvider>
   )
 }
 

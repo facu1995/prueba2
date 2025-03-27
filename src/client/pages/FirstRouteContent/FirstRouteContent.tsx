@@ -1,11 +1,11 @@
-import { Button, Spinner } from "../../components"
-import { useTranslation } from "react-i18next"
-import useApi from "../../hooks/base/useApi"
-import { DefaultLayout } from "../../layouts"
+
+
 import style from "./FirstRouteContent.module.css"
-import { TestContentResponse, TestParamSearch } from '../../interface/services/test.model';
-import { ResponseSearch } from "../../interface/services/BaseService.model"
-import { testService } from "../../services/base/test.service"
+import { useTranslation } from "react-i18next"
+import { testService } from "@/services"
+import { useApi } from "@/hooks"
+import { Button, Spinner } from "@/components"
+import { ResponseSearch, TestContentResponse, TestParamSearch } from "@/interface"
 
 const json2: TestParamSearch = {
   page: 0,

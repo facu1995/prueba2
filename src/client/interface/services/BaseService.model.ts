@@ -6,8 +6,6 @@ export interface ParamSearch<N extends Record<string, any> = any> {
   sort?: `${Extract<keyof Omit<N, keyof ParamSearch<N>>, string>},${'asc' | 'desc'}` | undefined;
 }
 
-
-
 export interface ResponseSearch <T>{
   content:            T[];
   pageable:           Pageable;

@@ -1,3 +1,3 @@
 import BaseService from "../utils/BaseService";
 
-export const testService = new BaseService("testEncry");
+export const testService = new BaseService ("testEncry");

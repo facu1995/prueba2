@@ -2,7 +2,7 @@ import { useState } from "react"
 
 import { Main, Nav } from "../../components"
 import style from "./DefaultLayout.module.css"
-import { Header } from "../../components/Custom/Header"
+import { Header } from "../../components/custom/Header"
 
 interface Props {
   className?: string

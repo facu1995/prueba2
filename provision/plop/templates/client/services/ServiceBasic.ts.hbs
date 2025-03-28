@@ -1,0 +1,6 @@
+import { {{pascalCase name}}, {{pascalCase name}}Payload, {{pascalCase name}}ParamSearch } from '@interface/index';
+import BasicService from "../utils/BasicService";
+
+const {{name}}Service = new BasicService<{{pascalCase name}}, {{pascalCase name}}Payload, {{pascalCase name}}ParamSearch>("{{endpoint}}");
+
+export default {{name}}Service;

@@ -1,0 +1,12 @@
+import '@testing-library/jest-dom';
+import {{pascalCase name}}Page from './{{pascalCase name}}Page';
+import { RenderResult, render } from '@testing-library/react';
+
+describe('< {{pascalCase name}}Page />', () => {
+     let component : RenderResult;
+
+    test('should render', () => {
+        component = render(<{{pascalCase name}}Page/>)
+        expect(component.container).toBeInTheDocument()
+    })
+})

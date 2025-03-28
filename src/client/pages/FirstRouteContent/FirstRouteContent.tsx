@@ -1,11 +1,12 @@
 
-
 import style from "./FirstRouteContent.module.css"
 import { useTranslation } from "react-i18next"
-import { testService } from "@/services"
-import { useApi } from "@/hooks"
-import { Button, Spinner } from "@/components"
-import { ResponseSearch, TestContentResponse, TestParamSearch } from "@/interface"
+import { Button, Spinner } from "@components/index"
+import { ResponseSearch, TestContentResponse, TestParamSearch } from "@interface/index"
+import { useApi } from "@hooks/index"
+import { testService } from "@services/index"
+import { DefaultLayout } from "@layouts/DefaultLayout"
+
 
 const json2: TestParamSearch = {
   page: 0,
@@ -46,20 +47,19 @@ const FirstRouteContent = () => {
   );
 
   return (
-/*     <DefaultLayout> */
+  <DefaultLayout> 
       <section className={style.section}>
         <div>
         <Button value={t('buttons.api')} onClick={() => call({ params: { size: 4 } })} />
           <Button value={"Post"} onClick={() => postExample(json, { params: { size: 6 } })} />
           <Button value={"callSearch"} onClick={() => callSearch(json2)} /> 
-
           <p>{
           (loading||loading1||loading2) && <Spinner/>}</p>
           {/* <p>{datasearch && JSON.stringify(datasearch?.content)}</p> */}
         </div>
 
       </section>
-/*     </DefaultLayout> */
+    </DefaultLayout> 
   )
 }
 

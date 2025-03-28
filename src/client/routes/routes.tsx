@@ -1,6 +1,9 @@
+import { FirstRouteContent,
+   SecondRouteContent,
+   Version,
+   // ROUTE IMPORTS
+   } from "@pages"
 import { LazyExoticComponent } from "react"
-import { Version } from "../pages/Version"
-import { FirstRouteContent } from "../pages"
 
 type JSXComponent = () => JSX.Element
 
@@ -33,9 +36,15 @@ export const routes: Array<Route> = normalizeRoutes([
     Component: FirstRouteContent
   },
   {
+    path: "/2",
+    name: "Page2",
+    Component: SecondRouteContent
+  },
+  {
     path: "/version",
     name: "Versión",
     Component: Version
-  }
+  },
+  // ADD ROUTER
 ])
  

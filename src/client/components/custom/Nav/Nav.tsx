@@ -17,7 +17,6 @@ const Nav = ({ setIsOpen }: { setIsOpen: (isOpen: boolean) => void }) => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
-  const adminRoutes = routes.find(({ path }) => path === "/admin")?.children || []
 
   useEffect(() => {
     sessionStorage.setItem("navIsOpen", String(isOpen))
@@ -29,7 +28,7 @@ const Nav = ({ setIsOpen }: { setIsOpen: (isOpen: boolean) => void }) => {
   }
 
   const goToHome = () => {
-    navigate("/admin", { replace: true })
+    navigate("/", { replace: true })
   }
 
   const handleArrowClick = () => {
@@ -77,7 +76,7 @@ const Nav = ({ setIsOpen }: { setIsOpen: (isOpen: boolean) => void }) => {
       </div>
 
       <ul className={style.list}>
-        {adminRoutes.map((route) => (
+        {routes.map((route) => (
           <Item
             {...route}
             key={route.path}

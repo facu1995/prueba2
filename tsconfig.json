@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "lib": [
-      "DOM",
-      "DOM.Iterable",
-      "ESNext"
-    ],
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "module": "ESNext",
     "skipLibCheck": true,
     /* Bundler mode */
@@ -18,26 +14,29 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "baseUrl": "./src/client",
+    "baseUrl": "./src",
     "paths": {
-      "@/*": [
-        "*"
-      ]
+      "@components/*": ["client/components/*"],
+      "@hooks/*": ["client/hooks/*"],
+      "@interface/*": ["client/interface/*"],
+      "@services/*": ["client/services/*"],
+      "@layouts/*": ["client/layouts/*"],
+      "@routes/*": ["client/routes/*"],
+      "@pages/*": ["client/pages/*"],
+
+      "@components": ["client/components"],
+      "@hooks": ["client/hooks"],
+      "@interface": ["client/interface"],
+      "@services": ["client/services"],
+      "@layouts": ["client/layouts"],
+      "@routes": ["client/routes"],
+      "@pages": ["client/pages"]
     }
   },
   "ts-node": {
     "esm": true,
     "experimentalSpecifierResolution": "node"
   },
-  "include": [
-    "src/client",
-    "src/server",
-    "src/vite.env.d.ts",
-    "src/vite-env.d.ts"
-  ],
-  "references": [
-    {
-      "path": "./tsconfig.node.json"
-    }
-  ]
+  "include": ["src/client", "src/server", "src/vite.env.d.ts", "src/vite-env.d.ts"],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }

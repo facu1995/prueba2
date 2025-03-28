@@ -1,0 +1,13 @@
+import { ParamSearch } from "./BaseService.model";
+
+export interface {{pascalCase name}} {
+  id: number;
+  name: string;
+}
+
+export interface {{pascalCase name}}Payload {
+  name: string;
+}
+
+export interface {{pascalCase name}}ParamSearch extends ParamSearch<{{pascalCase name}}ParamSearch> {
+}

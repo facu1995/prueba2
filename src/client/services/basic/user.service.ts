@@ -1,4 +1,4 @@
-import { ParamSearch } from "../../interface";
+import { ParamSearch } from "@/interface";
 import BasicService from "../utils/BasicService";
 
 export interface User {

@@ -16,6 +16,8 @@ export default ({ mode }) => {
         "@layouts": path.resolve(__dirname, "./src/client/layouts"),
         "@routes": path.resolve(__dirname, "./src/client/routes"),
         "@pages": path.resolve(__dirname, "./src/client/pages"),
+        "@assets": path.resolve(__dirname, "./src/client/assets"),
+        "@context": path.resolve(__dirname, "./src/client/context"),
       }
     },
     server: {

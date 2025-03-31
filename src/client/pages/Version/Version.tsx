@@ -6,7 +6,6 @@ import style from "./Version.module.css"
 
 const Version = () => {
   return (
-    <DefaultLayout>
       <section className={style.section}>
         <article className={style.article}>
           <div className={style.image}>
@@ -18,7 +17,6 @@ const Version = () => {
           </div>
         </article>
       </section>
-    </DefaultLayout>
   )
 }
 

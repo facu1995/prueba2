@@ -5,8 +5,8 @@ import { Item } from "./components"
 import style from "./Nav.module.css"
 import Assets from "./assets"
 import { Brand } from "../Brand"
-import { resetUser } from "../../../redux/slices/userSlice"
-import { routes } from "../../../routes"
+import { ROUTES, routes } from "../../../routes"
+import { resetUserData } from "client/redux"
 
 const Nav = ({ setIsOpen }: { setIsOpen: (isOpen: boolean) => void }) => {
   const [linkOpen, setLinkOpen] = useState<string | undefined>()
@@ -17,6 +17,7 @@ const Nav = ({ setIsOpen }: { setIsOpen: (isOpen: boolean) => void }) => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
+  const adminRoutes = routes.find(({ path }) => path === ROUTES.admin)?.children || []
 
   useEffect(() => {
     sessionStorage.setItem("navIsOpen", String(isOpen))
@@ -24,7 +25,8 @@ const Nav = ({ setIsOpen }: { setIsOpen: (isOpen: boolean) => void }) => {
   }, [isOpen, setIsOpen])
 
   const logOut = () => {
-    dispatch(resetUser())
+    dispatch(resetUserData())
+    navigate(ROUTES.login, { replace: true })
   }
 
   const goToHome = () => {
@@ -76,7 +78,7 @@ const Nav = ({ setIsOpen }: { setIsOpen: (isOpen: boolean) => void }) => {
       </div>
 
       <ul className={style.list}>
-        {routes.map((route) => (
+        {adminRoutes.map((route) => (
           <Item
             {...route}
             key={route.path}

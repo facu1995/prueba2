@@ -1,29 +1,30 @@
 import { useState } from "react"
-
 import { Main, Nav } from "../../components"
 import style from "./DefaultLayout.module.css"
-import { Header } from "../../components/custom/Header"
+import AuthGuard from "@routes/guard/auth.guard"
+import { Outlet } from "react-router-dom"
 
 interface Props {
   className?: string
   children?: React.ReactNode
-  HeaderChild?: React.ReactNode
 }
 
-const DefaultLayout = ({ children, className, HeaderChild }: Props) => {
+const DefaultLayout = ({ className }: Props) => {
   const [isOpen, setIsOpen] = useState(() => {
     return sessionStorage.getItem("navIsOpen") === "true"
   })
 
   return (
+    <AuthGuard>
     <div className={style["default-layout"]}>
       <div className={`${style["default-content"]} ${className ?? ""}`}>
         <Nav setIsOpen={setIsOpen} />
-        {children && (
-          <Main className={style[isOpen ? "content-open" : "content-closed"]}>{children}</Main>
-        )}
+        <Main className={style[isOpen ? "content-open" : "content-closed"]}>
+          <Outlet/>
+        </Main>
       </div>
     </div>
+    </AuthGuard>
   )
 }
 

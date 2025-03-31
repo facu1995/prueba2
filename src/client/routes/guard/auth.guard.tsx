@@ -1,10 +1,16 @@
-import { Navigate, Outlet } from "react-router-dom"
+import { Navigate } from "react-router-dom"
 import { useAppSelector } from "../../redux/hooks"
+import ROUTES from "@routes/utils/constantes"
 
-const AuthGuard = () => {
-  const { userName } = useAppSelector((state) => state.user)
+interface Props {
+  children: React.ReactNode
+}
+const AuthGuard = ({ children }: Props) => {
+  const { username, token } = useAppSelector((state) => state.user)
 
-  return userName !== "" ? <Outlet /> : <Navigate replace to={"/"} />
+  return username && token
+    ? <>{children}</>
+    : <Navigate replace to={ROUTES.login} />
 }
 
 export default AuthGuard

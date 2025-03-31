@@ -8,6 +8,7 @@ export default ({ mode }) => {
     plugins: [react()],
     resolve: {
       alias: {
+        client: path.resolve(__dirname, "./src/client"),
         "@components": path.resolve(__dirname, "./src/client/components"),
         "@hooks": path.resolve(__dirname, "./src/client/hooks"),
         "@interface": path.resolve(__dirname, "./src/client/interface"),

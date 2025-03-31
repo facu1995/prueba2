@@ -1,3 +1,5 @@
+import { AxiosRequestConfig } from "axios";
+
 export interface ParamSearch<N extends Record<string, any> = any> {
   page: number;
   size: number;
@@ -33,4 +35,13 @@ export interface Sort {
   empty:    boolean;
   sorted:   boolean;
   unsorted: boolean;
+}
+
+export interface AxiosResponse<T = any> {
+  data: T; 
+  status: number; 
+  statusText: string; 
+  headers: any; 
+  config: AxiosRequestConfig; 
+  request?: any; 
 }

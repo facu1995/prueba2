@@ -1,4 +1,4 @@
-import { AxiosRequestConfig } from "axios";
+import { AxiosRequestConfig, AxiosResponse } from "axios";
 import { useState, useEffect, useRef, useCallback } from "react";
 interface UseApiResult<T, P> {
   data: T | null;
@@ -8,7 +8,7 @@ interface UseApiResult<T, P> {
 }
 
 function useApi<T, P = void>(
-  callFunction: (signal: AbortSignal, params?: P,config?: AxiosRequestConfig) => Promise<T>,
+  callFunction: (signal: AbortSignal, params?: P,config?: AxiosRequestConfig) =>Promise<AxiosResponse<T>>,
   options: {
     initialParams?: P;
     autoCall?: boolean;
@@ -36,8 +36,8 @@ function useApi<T, P = void>(
       console.log("Calling API with params:", params);
       const result = await callFunction(controller.signal, params, config);
       console.log("API response:", result);
-      setData(result);
-      if (onSuccess) onSuccess(result);
+      setData(result.data);
+      if (onSuccess) onSuccess(result.data);
     } catch (err: any) {
       console.error("Error in API call:", err);
       if (err.name === "AbortError") {

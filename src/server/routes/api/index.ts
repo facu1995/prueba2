@@ -4,6 +4,7 @@ import { authorizationDecrypter } from "../../middlewares/authorizationDecrypter
 //ROUTES IMPORTS
 import testEncryRouter from "./testEncry"
 import testRouter from "./test"
+import loginRouter from "./login"
 
 const apiRouter = Router()
 
@@ -13,6 +14,7 @@ apiRouter.get("/hello", (_req: Request, res: Response) => {
 
 //ADD ROUTES
 apiRouter.use('/testEncry', authorizationDecrypter, testEncryRouter)
+apiRouter.use("/login", loginRouter)
 apiRouter.use('/test', testRouter)
 apiRouter.use('/auth', authRouter)
 

@@ -1,8 +1,8 @@
 import { constantsENV } from "client/config/constants";
 import BaseService from "../utils/BaseService";
 
-const {{name}}Service = new BaseService (constantsENV.ENDPOINT.{{name}});
+const authService = new BaseService (constantsENV.ENDPOINT.auth);
 
-export default {{name}}Service;
+export default authService;
 
 

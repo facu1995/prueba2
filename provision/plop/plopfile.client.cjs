@@ -155,6 +155,12 @@ module.exports = function (plop) {
         type: "modify"
       },
       {
+        path: "../../src/client/routes/utils/constantes.ts",
+        pattern: /(\/\/ ADD ROUTER)/g,
+        template: "  {{upperCase name}}: '/{{name}}',\n$1",
+        type: "modify"
+      },
+      {
         path: "../../src/client/routes/routes.tsx",
         pattern: /(\/\/ ADD ROUTER)/g,
         templateFile: "templates/client/pages/PageAddRouter.ts.hbs",
@@ -201,6 +207,12 @@ module.exports = function (plop) {
         path: "../../src/client/interface/index.ts",
         pattern: /(\/\/ MODEL IMPORTS)/g,
         template: "export * from './services/{{name}}.model';\n$1",
+        type: "modify"
+      },
+      {
+        path: "../../src/client/config/constants.ts",
+        pattern: /(\/\/ ADD CONSTANTS)/g,
+        template: "{{camelCase name}}: import.meta.env.VITE_ENDPOINT_{{constantCase name}} || '{{endpoint}}',\n$1",
         type: "modify"
       }
       ]

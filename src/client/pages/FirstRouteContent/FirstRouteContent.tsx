@@ -5,7 +5,6 @@ import { Button, Spinner } from "@components/index"
 import { ResponseSearch, TestContentResponse, TestParamSearch } from "@interface/index"
 import { useApi } from "@hooks/index"
 import { testService } from "@services/index"
-import { DefaultLayout } from "@layouts/DefaultLayout"
 
 
 const json2: TestParamSearch = {
@@ -28,6 +27,7 @@ const FirstRouteContent = () => {
 
   const { data, loading,call } = useApi( testService.get, {
     initialParams: { params: { size: 2 } },
+    autoCall: false,
   });
 
 
@@ -47,7 +47,6 @@ const FirstRouteContent = () => {
   );
 
   return (
-  <DefaultLayout> 
       <section className={style.section}>
         <div>
         <Button value={t('buttons.api')} onClick={() => call({ params: { size: 4 } })} />
@@ -59,7 +58,6 @@ const FirstRouteContent = () => {
         </div>
 
       </section>
-    </DefaultLayout> 
   )
 }
 

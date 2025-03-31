@@ -1,35 +1,57 @@
 import { createSlice } from "@reduxjs/toolkit"
 import type { PayloadAction } from "@reduxjs/toolkit"
+import { setTokenInterceptor } from "@services/utils/API"
+import Cookies from "js-cookie"
 
 interface User {
-  userName: string
-  userMail: string
-  userPic: string | null
+  username: string | null
+  token: string | null
 }
 
-const initialState = {
-  userName: "Nombre de Usuario",
-  userMail: "usuario@gmail.com",
-  userPic: null
-} as User
+const EmptyState: User = {
+  username: null,
+  token: null
+}
+
+const handleInitialState = (): User => {
+  const cookieData = Cookies.get("user")
+  if (!cookieData) {
+    return EmptyState
+  }
+  try {
+    const sessionData = JSON.parse(cookieData)
+    setTokenInterceptor(sessionData?.token)
+    return { username: sessionData?.username || null, token: sessionData?.token || null }
+  } catch (error) {
+    console.error("Failed to parse user cookie:", error)
+    return EmptyState
+  }
+}
+
+const initialState: User = Cookies.get("user") ? handleInitialState() : EmptyState
+
+const persistSession = async (session: User) => {
+  Cookies.set("user", JSON.stringify(session));
+}
 
 export const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    setUser(state, action: PayloadAction<User>) {
-      const { userName, userMail, userPic } = action.payload
-      state.userName = userName
-      state.userMail = userMail
-      state.userPic = userPic
+    setUserData(state, action: PayloadAction<User>) {
+      const { username, token } = action.payload
+      state.username = username
+      state.token = token
+      persistSession(action.payload)
+      setTokenInterceptor(token!)
     },
-    setUserName(state, action: PayloadAction<string>) {
-      state.userName = action.payload
-    },
-    resetUser: () => initialState
+    resetUserData: () => {
+      persistSession(EmptyState) 
+      return EmptyState
+    }
   }
 })
 
-export const { setUser, resetUser, setUserName } = userSlice.actions
+export const { setUserData, resetUserData } = userSlice.actions
 
 export default userSlice.reducer

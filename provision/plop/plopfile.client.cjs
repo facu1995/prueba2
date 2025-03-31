@@ -1,5 +1,7 @@
 module.exports = function (plop) {
 
+  plop.setHelper("eq", (a, b) => a === b);
+
   plop.setGenerator("component", {
     description: "Create a component, with styles and tests",
     prompts: [
@@ -123,10 +125,17 @@ module.exports = function (plop) {
       {
         type: "input",
         name: "name",
-        message: "What is this page's name?"
+        message: "What is the name of this page?"
       },
+      {
+        type: "list",
+        name: "type",
+        message: "Is the route protected?",
+        choices: ["yes", "no"]
+      }
     ],
-    actions: [
+    actions: function (data) {
+    const actions= [
       {
         type: "add",
         path: "../../src/client/pages/{{pascalCase name}}Page/{{pascalCase name}}Page.tsx",
@@ -151,22 +160,34 @@ module.exports = function (plop) {
       {
         path: "../../src/client/routes/routes.tsx",
         pattern: /(\/\/ ROUTE IMPORTS)/g,
-        template: "{{pascalCase name}}Page, \n$1",
+        template: "  {{pascalCase name}}Page, \n$1",
         type: "modify"
       },
       {
         path: "../../src/client/routes/utils/constantes.ts",
         pattern: /(\/\/ ADD ROUTER)/g,
-        template: "  {{upperCase name}}: '/{{name}}',\n$1",
-        type: "modify"
-      },
-      {
-        path: "../../src/client/routes/routes.tsx",
-        pattern: /(\/\/ ADD ROUTER)/g,
-        templateFile: "templates/client/pages/PageAddRouter.ts.hbs",
+        template: "  {{camelCase name}}: '/{{name}}',\n$1",
         type: "modify"
       }
     ]
+
+    if (data.type === "yes") {
+      actions.push({
+        path: "../../src/client/routes/routes.tsx",
+        pattern: /(\/\/ ADD GUARD)/g,
+        templateFile: "templates/client/pages/PageAddRouter.ts.hbs",
+        type: "modify"
+      })}
+      else{
+        actions.push({
+          path: "../../src/client/routes/routes.tsx",
+          pattern: /(\/\/ ADD ROUTER)/g,
+          templateFile: "templates/client/pages/PageAddRouter.ts.hbs",
+          type: "modify"
+        })
+      }
+      return actions
+  }
   });
 
   plop.setGenerator("service", {

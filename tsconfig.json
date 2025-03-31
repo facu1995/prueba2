@@ -23,14 +23,18 @@
       "@layouts/*": ["client/layouts/*"],
       "@routes/*": ["client/routes/*"],
       "@pages/*": ["client/pages/*"],
-
+      "@assets/*": ["client/assets/*"],
+      "@context/*": ["client/context/*"],
       "@components": ["client/components"],
       "@hooks": ["client/hooks"],
       "@interface": ["client/interface"],
       "@services": ["client/services"],
       "@layouts": ["client/layouts"],
       "@routes": ["client/routes"],
-      "@pages": ["client/pages"]
+      "@pages": ["client/pages"],
+      "@assets": ["client/assets"],
+      "@context": ["client/context"],
+
     }
   },
   "ts-node": {

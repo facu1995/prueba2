@@ -5,7 +5,7 @@ export const ROUTES = {
   version: '/version',
   login: '/login',
   admin: '/admin',
-  // ADD ROUTER
+// ADD ROUTER
 };
 
 export default ROUTES;

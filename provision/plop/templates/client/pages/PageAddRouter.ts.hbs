@@ -1,6 +1,11 @@
 {
-    path: "ROUTES.{{upperCase name}}",
-    name: "{{pascalCase name}}",
-    Component: {{pascalCase name}}Page
-  },
-  // ADD ROUTER
+  path: ROUTES.{{camelCase name}},
+  name: "{{pascalCase name}}",
+  Component: {{pascalCase name}}Page
+}{{#if (eq type "yes")~}}
+,
+// ADD GUARD
+{{else~}}
+,
+// ADD ROUTER
+{{/if}}

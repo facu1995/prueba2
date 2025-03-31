@@ -2,7 +2,7 @@ import {
   FirstRouteContent,
   SecondRouteContent,
   Version,
-  // ROUTE IMPORTS
+// ROUTE IMPORTS
 } from "@pages"
 import { LazyExoticComponent } from "react"
 import ROUTES from "./utils/constantes";
@@ -73,9 +73,10 @@ export const routes: Array<Route> = normalizeRoutes([
         name: "Page2",
         Component: SecondRouteContent
       },
+      // ADD GUARD
     ],
-  }
-  // ADD ROUTER
+  },
+// ADD ROUTER
 ])
 
 

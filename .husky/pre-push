@@ -4,6 +4,12 @@ BRANCH=$(git rev-parse --abbrev-ref HEAD)
 # Obtener el último mensaje de commit
 LAST_COMMIT_MSG=$(git log -1 --pretty=%B)
 
+# Saltarse el paso del linter si estamos en la rama main
+if [ "$BRANCH" = "main" ]; then
+  echo "La rama actual es 'main', saltando lint..."
+  exit 0
+fi
+
 # Saltarse el paso del linter en ramas productivas
 if echo "$BRANCH" | grep -q "prod"; then
   echo "La rama actual incluye 'prod', saltando lint..."

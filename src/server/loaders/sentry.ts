@@ -1,12 +1,12 @@
 import * as Sentry from "@sentry/node"
 import * as Tracing from "@sentry/tracing"
 import { Application } from "express"
-import { config } from "../config/index"
 import logger from "./logger"
+import { properties } from "../config/constants"
 
 export const load = ({ expressApp }: { expressApp: Application }) => {
   Sentry.init({
-    ...config.sentry,
+    ...properties.sentry,
     integrations: [
       new Sentry.Integrations.Http({ tracing: true }),
       new Tracing.Integrations.Express({ app: expressApp })

@@ -1,9 +1,8 @@
 import { Router, Request, Response } from "express"
 import authRouter from "./auth"
-import { authorizationDecrypter } from "../../middlewares/authorizationDecrypter"
+//import { authorizationDecrypter } from "../../middlewares/authorizationDecrypter"
 //ROUTES IMPORTS
-import testEncryRouter from "./testEncry"
-import testRouter from "./test"
+import test1Router from "./test1"
 import loginRouter from "./login"
 
 const apiRouter = Router()
@@ -13,9 +12,8 @@ apiRouter.get("/hello", (_req: Request, res: Response) => {
 })
 
 //ADD ROUTES
-apiRouter.use('/testEncry', authorizationDecrypter, testEncryRouter)
+apiRouter.use('/test1', test1Router)
 apiRouter.use("/login", loginRouter)
-apiRouter.use('/test', testRouter)
 apiRouter.use('/auth', authRouter)
 
 ///ROUTE WITH DECRYPTION

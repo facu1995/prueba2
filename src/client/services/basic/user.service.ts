@@ -1,4 +1,4 @@
-import { ParamSearch } from "@/interface";
+import { ParamSearch } from "@interface/index";
 import BasicService from "../utils/BasicService";
 
 export interface User {
@@ -11,5 +11,5 @@ export interface CreateUserPayload {
 }
 
 
-export const userService = new BasicService<User, CreateUserPayload, ParamSearch>("/users");
+export const userService = new BasicService<User, CreateUserPayload, ParamSearch>("/test1");
 

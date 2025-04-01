@@ -1,9 +1,9 @@
 import { LoggingWinston } from "@google-cloud/logging-winston"
+import { properties } from "../config/constants"
 import * as winston from "winston"
-import { config } from "../config/index"
 
 const logger = winston.createLogger({
-  level: config.logs.level,
+  level: properties.logs.level,
   format: winston.format.combine(
     winston.format.colorize(),
     winston.format.timestamp(),

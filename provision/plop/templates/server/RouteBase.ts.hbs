@@ -1,0 +1,25 @@
+import { Router } from "express"
+import { handleRequest } from "../../../controllers/utils/BaseController";
+
+const {{name}}Router = Router()
+
+// GET
+{{name}}Router.get("/search", handleRequest); 
+{{name}}Router.get("/", handleRequest);
+{{name}}Router.get("/:id", handleRequest); 
+
+// POST
+{{name}}Router.post("/batch", handleRequest); 
+{{name}}Router.post("/", handleRequest);
+
+// PUT
+{{name}}Router.put("/batch", handleRequest); 
+{{name}}Router.put("/", handleRequest);
+{{name}}Router.put("/:id", handleRequest); 
+
+// DELETE
+{{name}}Router.delete("/batch", handleRequest); 
+{{name}}Router.delete("/", handleRequest);
+{{name}}Router.delete("/:id", handleRequest); 
+
+export default {{name}}Router;

@@ -4,12 +4,12 @@ import express from "express"
 import path from "path"
 import cors from "cors"
 import { fileURLToPath } from "url"
-import { config } from "./config/index"
 import logger from "./loaders/logger"
 import * as sentry from "./loaders/sentry"
 import apiRouter from "./routes/api/index"
 import sentryRouter from "./routes/sentry/index"
 import { errorLogger } from "./middlewares/errorLogger"
+import { properties } from "./config/constants"
 
 const app = express()
 
@@ -41,9 +41,9 @@ app.get("*", (_req, res) => {
 app.use(Sentry.Handlers.errorHandler())
 app.use(errorLogger)
 app
-  .listen(config.app.port, () => {
-      logger.info(`Server listening on port: ${config.app.port}`)})
-      logger.info('CONFIG: ' + JSON.stringify(config, null, " "))
+  .listen(properties.port, () => {
+      logger.info(`Server listening on port: ${properties.port}`)})
+      logger.info('properties: ' + JSON.stringify(properties, null, " "))
       ///Add a log with variables that may took the env value o a default one to debug the correct parsing of enviroment variables
   .on("error", (err) => {
     logger.error(err)

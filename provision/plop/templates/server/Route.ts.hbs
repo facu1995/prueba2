@@ -4,10 +4,24 @@ import * as {{name}}Controller from "../../../controllers/{{name}}Controller"
 const {{name}}Router = Router()
 
 
-{{name}}Router.get("/", {{name}}Controller.basicGet)
+// GET
+{{name}}Router.get("/search", {{name}}Controller.{{name}}Fetch); 
+{{name}}Router.get("/", {{name}}Controller.basicGet);
+{{name}}Router.get("/:id", {{name}}Controller.{{name}}Fetch); 
 
-{{name}}Router.post("/", {{name}}Controller.{{name}}Fetch)
+// POST
+{{name}}Router.post("/batch", {{name}}Controller.{{name}}Fetch); 
+{{name}}Router.post("/", {{name}}Controller.{{name}}Fetch);
 
+// PUT
+{{name}}Router.put("/batch", {{name}}Controller.{{name}}Fetch); 
+{{name}}Router.put("/", {{name}}Controller.{{name}}Fetch);
+{{name}}Router.put("/:id", {{name}}Controller.{{name}}Fetch); 
+
+// DELETE
+{{name}}Router.delete("/batch", {{name}}Controller.{{name}}Fetch); 
+{{name}}Router.delete("/", {{name}}Controller.{{name}}Fetch);
+{{name}}Router.delete("/:id", {{name}}Controller.{{name}}Fetch); 
 
 
 export default {{name}}Router

@@ -7,7 +7,7 @@ const basicGet = (_req: Request, res: Response) => {
 }
 
 const {{name}}Fetch = async (req: Request, res: Response, next: NextFunction) => {
-  const response = await {{name}}Service(req, next)
+  const response = await {{name}}Service (req, next)
   if (response && !res.headersSent) {
     res.status(res.statusCode).json(response.data)
     ////./src/client/config/API.ts --> clientId header

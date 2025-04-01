@@ -8,7 +8,7 @@ export const PUBLIC_URL = process.env.VITE_PUBLIC_URL || ""
 export const SENTRY_DSN = process.env.VITE_SENTRY_DSN || ""
 export const STAGE = process.env.VITE_STAGE || "testing"
 const BASIC = process.env.VITE_BASIC_TOKEN || "Basic emV1czppbmZvc2lz"
-const USER =process.env.VITE_USER || "zeus"
+const USER = process.env.VITE_USER || "zeus"
 const PASS = process.env.VITE_PASS || "1234"
 //GENERATE NEW VALUES FOR NEW PROJECT
 export const CRYPTO_SECRET = process.env.VITE_CRYPTO_SECRET
@@ -24,20 +24,27 @@ const API_MESSAGE_USERS =
   process.env.VITE_ZEUS_GATEWAY && process.env.VITE_ZEUS_TENANTS
     ? `${process.env.VITE_ZEUS_GATEWAY}${process.env.VITE_ZEUS_TENANTS}`
     : ""
-    export const properties = {
-      port: PORT,
-      publicUrl: PUBLIC_URL,
-      apiAuthUrl: API_AUTH_URL,
-      apiMessageUsers: API_MESSAGE_USERS,
-      user: USER,
-      pass: PASS,
-      basic: BASIC,
-      sentry: {
-        dsn: SENTRY_DSN,
-        release: VERSION,
-        environment: STAGE
-      },
-      logs: {
-        level: process.env.LOG_LEVEL || "silly"
-      }
-    }
+
+//ADD CONST
+
+export const properties = {
+  port: PORT,
+  publicUrl: PUBLIC_URL,
+  apiAuthUrl: API_AUTH_URL,
+  apiMessageUsers: API_MESSAGE_USERS,
+  user: USER,
+  pass: PASS,
+  basic: BASIC,
+  sentry: {
+    dsn: SENTRY_DSN,
+    release: VERSION,
+    environment: STAGE
+  },
+  api: {
+    endpointTest: "https://webhook.site/d40265e8-a85b-4ca8-bc6f-1b5cf6fcfb57/search",
+//ADD ENDPOINT
+  },
+  logs: {
+    level: process.env.LOG_LEVEL || "silly"
+  }
+}

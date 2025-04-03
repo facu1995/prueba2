@@ -43,13 +43,13 @@ module.exports = function (plop) {
         {
           path: "../../.env.example",
           pattern: /(#ADD PROPERTY)/g,
-          template: 'VITE_ENDPOINT{{constantCase name}}= {{url}}',
+          template: 'VITE_ENDPOINT{{constantCase name}}=/{{url}}',
           type: "append"
         },
         {
           path: "../../src/server/config/constants.ts",
           pattern: /(\/\/ADD CONST)/g,
-          template: 'const ENDPOINT_{{constantCase name}} = process.env.VITE_API_URL && process.env.VITE_ENDPOINT{{constantCase name}} ? `${process.env.VITE_API_URL}${process.env.VITE_ENDPOINT{{constantCase name}} }` : "{{url}}"',
+          template: 'const ENDPOINT_{{constantCase name}} = process.env.VITE_API_URL && process.env.VITE_ENDPOINT{{constantCase name}} ? `${process.env.VITE_API_URL}${process.env.VITE_ENDPOINT{{constantCase name}} }` : "/{{url}}"',
           type: "append"
         }
       ]

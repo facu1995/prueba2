@@ -90,7 +90,7 @@ module.exports = function (plop) {
       {
         type: "add",
         path: "../../src/client/i18n/es/{{camelCase name}}.ts",
-        templateFile: "templates/client/i18_es.ts.hbs"
+        templateFile: "templates/client/i18/i18_es.ts.hbs"
       },
       {
         path: "../../src/client/i18n/i18n.ts",

@@ -13,7 +13,7 @@
   min-height: 137px;
   position: absolute;
   background: var(--gradient-linear);
-  border-bottom: 4px solid var(--purple-bold);
+  border-bottom: 4px solid var(--primary);
 }
 
 .container {

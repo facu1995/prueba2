@@ -55,8 +55,8 @@
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background: var(--turquoise-10);
-  border: 1px solid var(--turquoise);
+  background: var(--secondary-10);
+  border: 1px solid var(--secondary);
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 

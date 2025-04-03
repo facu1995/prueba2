@@ -61,7 +61,7 @@
 .content > h3 {
   font-feature-settings: "liga" off, "clig" off;
   font: normal 700 20px/140% "Open Sans";
-  color: var(--purple-light);
+  color: var(--primary-light);
   overflow: hidden;
 }
 

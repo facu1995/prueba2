@@ -5,7 +5,7 @@
   cursor: pointer;
   border-radius: 60px;
   color: var(--black-11);
-  background: var(--turquoise);
+  background: var(--secondary);
   gap: 20px;
   display: flex;
   align-items: center;
@@ -14,11 +14,11 @@
 }
 
 .button:hover {
-  background: var(--turquoise);
+  background: var(--secondary);
 }
 
 .button:active {
-  background: var(--turquoise-3);
+  background: var(--secondary-3);
   scale: 0.95;
 }
 
@@ -29,15 +29,15 @@
 
 .unfilled:hover {
   background: 0;
-  color: var(--turquoise);
+  color: var(--secondary);
 }
 
 .unfilled:active {
-  color: var(--turquoise);
+  color: var(--secondary);
 }
 
 .unfilled:is(:hover, :active) > div > svg > path {
-  fill: var(--turquoise);
+  fill: var(--secondary);
 }
 
 .large {
@@ -57,7 +57,7 @@
 
 .button:disabled {
   color: white;
-  background: var(--turquoise-6);
+  background: var(--secondary-6);
 }
 
 .button:disabled:active {
@@ -65,7 +65,7 @@
 }
 
 .unfilled:disabled {
-  color: var(--turquoise-6);
+  color: var(--secondary-6);
   background: 0;
 }
 

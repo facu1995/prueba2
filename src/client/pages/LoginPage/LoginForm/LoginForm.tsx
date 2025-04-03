@@ -51,7 +51,7 @@ const LoginForm = ({ submit, loading }: Props) => {
               value={values.password}
             />
           </div>
-          <Button  value="Log in" type="submit" />
+          <Button  value="Log in" type="submit" disabled={loading} />
         </form>
       )}
     </Formik>

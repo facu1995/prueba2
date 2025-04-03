@@ -19,13 +19,13 @@
 }
 
 .row.selected::before {
-  background: var(--turquoise-10);
-  border-color: var(--turquoise);
+  background: var(--secondary-10);
+  border-color: var(--secondary);
   box-shadow: 0px 0px 8px 0px rgba(128, 112, 221, 0.2);
 }
 
 .row.row.selected > * {
-  color: var(--turquoise);
+  color: var(--secondary);
 }
 
 .container {
@@ -63,7 +63,7 @@
 }
 
 .arrowContainer > button:is(:hover, :active) svg path {
-  fill: var(--turquoise);
+  fill: var(--secondary);
 }
 
 .withoutArrow {

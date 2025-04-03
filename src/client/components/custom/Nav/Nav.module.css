@@ -62,13 +62,11 @@
   display: grid;
   place-items: center;
   overflow: hidden;
+  padding: 10px;
 }
 
 .brand {
-  margin-inline: 13px;
-  width: 120px;
-  height: 60px;
-  aspect-ratio: 16/9;
+  width: 100%;
 }
 
 .brand > img {

@@ -12,11 +12,11 @@ const SecondRouteContent = () => {
       autoCall: false,
       onSuccess: () => {
         showToast({
-          text: "Success", type: ToastType.ERROR
+          text: "Success", type: ToastType.SUCCESS
         })
       },
       onError: () => {
-        showToast({ text: "Success", type: ToastType.ERROR })
+        showToast({ text: "Error", type: ToastType.ERROR })
       }
     }
   );
@@ -47,7 +47,7 @@ const SecondRouteContent = () => {
         value={"get"}
         onClick={() => {
           console.log("ruta", userService.getEndpoint().concat("/2"))
-          getUser({ url: `${userService.getEndpoint()}/2`,params: { hola: 7 } })
+          getUser({ url: `${userService.getEndpoint()}/2`, params: { hola: 7 } })
         }
         }
       />        <p>Second Route</p>

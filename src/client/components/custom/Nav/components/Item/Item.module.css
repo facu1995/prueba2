@@ -38,11 +38,11 @@
 }
 
 .item.active {
-  background-color: var(--purple-light-10);
+  background-color: var(--primary-light-10);
 }
 
 .item:is(:hover, :focus-visible, :focus-within, :active) {
-  background: var(--purple-light-10);
+  background: var(--primary-light-10);
 }
 
 .item > .icon > svg > path {
@@ -52,19 +52,19 @@
 
 .item:is(:hover, :focus-visible, :focus-within, :active) {
   cursor: pointer;
-  color: var(--purple-bold);
+  color: var(--primary);
 }
 
 .item:is(:hover, :focus-visible, :focus-within, :active) > .icon > svg > path {
-  fill: var(--purple-bold);
+  fill: var(--primary);
 }
 
 .item.active {
-  color: var(--purple-bold);
+  color: var(--primary);
 }
 
 .item.active > .icon > svg > path {
-  fill: var(--purple-bold);
+  fill: var(--primary);
 }
 
 .span {
@@ -97,11 +97,11 @@
 }
 
 .item:is(:hover, :focus-visible, :focus-within, :active) > .arrow > svg > path {
-  fill: var(--purple-bold);
+  fill: var(--primary);
 }
 
 .item.active > .arrow > svg > path {
-  fill: var(--purple-bold);
+  fill: var(--primary);
 }
 
 .content {

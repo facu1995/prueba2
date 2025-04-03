@@ -9,7 +9,7 @@ import Cookies from "js-cookie"
 export const LoginPage = () => {
   const { tryLogin, loading } = useLoginSimple()
   const token = useAppSelector((state) => state.user.token)
-  const session = JSON.parse(Cookies.get("user") as string)
+  const session = Cookies.get("user") ? JSON.parse(Cookies.get("user") as string) : null
   const navigate = useNavigate()
 
   useEffect(() => {

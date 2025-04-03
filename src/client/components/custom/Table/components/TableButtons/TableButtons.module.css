@@ -25,7 +25,7 @@
 
 .button > svg > path {
   transition: ease-out 0.2s;
-  fill: var(--purple-light-3);
+  fill: var(--primary-light-3);
 }
 
 .button:active svg {
@@ -33,17 +33,17 @@
 }
 
 .button:is(:hover, :active) {
-  background: var(--purple-light-10);
+  background: var(--primary-light-10);
 }
 
 .button:is(:hover, :active) svg path {
-  fill: var(--purple-light);
+  fill: var(--primary-light);
 }
 
 .trash svg path {
-  fill: var(--purple-light-3);
+  fill: var(--primary-light-3);
 }
 
 .trash:is(:hover, :active) svg path {
-  fill: var(--purple-light);
+  fill: var(--primary-light);
 }

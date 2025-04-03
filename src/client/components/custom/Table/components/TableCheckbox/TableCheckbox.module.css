@@ -45,8 +45,8 @@
   visibility: hidden;
 }
 .checkbox-wrapper-65 input[type="checkbox"]:checked + .cbx {
-  background-color: var(--turquoise);
-  border-color: var(--turquoise);
+  background-color: var(--secondary);
+  border-color: var(--secondary);
 }
 .checkbox-wrapper-65 input[type="checkbox"]:checked + .cbx svg {
   stroke-dashoffset: 0;
